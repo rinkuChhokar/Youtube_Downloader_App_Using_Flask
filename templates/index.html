@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <title>Hello, world!</title>
+    <style>
+      .container {
+        max-width: 600px;
+      }
+
+      .text-center {
+        margin-bottom: 30px;
+      }
+
+      .mb-3 {
+        margin-bottom: 20px;
+      }
+
+      #progressBarContainer {
+        margin-top: 20px;
+      }
+
+      #progressText {
+        margin-bottom: 10px;
+      }
+      .submit-btn-class {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Customize your own styles as needed */
+    </style>
+  </head>
+  <body>
+    <div class="container mt-4 shadow p-3 mb-5 bg-body rounded">
+      <div class="text-center">
+        <img
+          src="https://www.lifeyet.com/wp-content/uploads/2023/01/YouTube-downloader-.jpeg"
+          height="200px"
+          width="350px"
+          class="img-fluid"
+          alt=""
+        />
+        <h1>Youtube Video Downloader</h1>
+      </div>
+      <form method="POST" action="/">
+        <div class="mb-3">
+          <label for="urlLink" class="form-label">Enter URL</label>
+          <input
+            type="text"
+            class="form-control"
+            id="urlLink"
+            aria-describedby="emailHelp"
+            name="urlLink"
+            oninput="toggleDownloadButton()"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="resolution" class="form-label">Select Resolution</label>
+          <select class="form-select" id="resolution" name="resolution">
+            <option value="144p">144p</option>
+            <option value="240p">240p</option>
+            <option value="360p">360p</option>
+            <!-- Add more resolution options as needed -->
+          </select>
+        </div>
+        <div class="submit-btn-class">
+          <button
+            type="submit"
+            class="btn btn-primary"
+            id="downloadButton"
+            disabled
+          >
+            Download Video
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      const toggleDownloadButton = () => {
+        let url = document.getElementById("urlLink").value;
+        let downloadButton = document.getElementById("downloadButton");
+        downloadButton.disabled = url.trim() === "";
+      };
+    </script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
